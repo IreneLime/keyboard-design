@@ -73,23 +73,23 @@ outlines:
       fillet: 2
       points:
         - ref: matrix_middle_num
-          shift: [-2.5px + 2, 1.5py]
+          shift: [-2.5px + 2, 1.6py]
         - ref: matrix_middle_num
-          shift: [0.5px,1.5py]
+          shift: [0.5px,1.6py]
         - ref: matrix_inner_num
-          shift: [0.5px + 7.53, 1.9py]
+          shift: [0.5px + 7.53, 2.0py]
         - ref: matrix_inner_num
-          shift: [0.5px + 7.53, 1.1py]
+          shift: [0.5px + 7.53, 1.2py]
         - ref: mirror_matrix_inner_num
-          shift: [0.5px + 7.53, 1.1py]
+          shift: [0.5px + 7.53, 1.2py]
         - ref: mirror_matrix_inner_num
-          shift: [0.5px + 7.53, 1.9py]
+          shift: [0.5px + 7.53, 2.0py]
         - ref: mirror_matrix_middle_num
-          shift: [0.5px, 1.5py]
+          shift: [0.5px, 1.6py]
         - ref: mirror_matrix_middle_num
-          shift: [-0.5px, 1.5py]
+          shift: [-0.5px, 1.6py]
         - ref: mirror_matrix_middle_num
-          shift: [-2.5px + 2, 1.5py]
+          shift: [-2.5px + 2, 1.6py]
         - ref: mirror_matrix_thumb_bottom
           shift: [-5.5px + 5,-0.5py]
         - ref: mirror_matrix_thumb_bottom
