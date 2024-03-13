@@ -1,0 +1,137 @@
+units:
+  mm: 1
+  kx: cx
+  ky: cy
+  px: kx + 2
+  py: ky + 2
+
+points:
+  zones:
+    matrix:
+      columns:
+        pinky:
+          key:
+            skip: false
+            column_net: D1
+            mirror.column_net: F4
+          rows:
+            bottom.skip: true
+        ring:
+          key:
+            stagger: 14
+            column_net: D0
+            mirror.column_net: F5
+        middle:
+          key:
+            stagger: 5
+            column_net: D4
+            mirror.column_net: F6
+        index:
+          key:
+            stagger: -5
+            column_net: C6
+            mirror.column_net: F7
+        inner:
+          key:
+            stagger: -6
+            column_net: D7
+            mirror.column_net: B1
+        thumb:
+          key:
+            skip: true
+            stagger: -7
+            column_net: B5
+            mirror.column_net: B6
+          rows:
+            home.skip: false
+            bottom.skip: false
+      rows:
+        bottom:
+          row_net: E6
+        home:
+          row_net: B4
+        top:
+          row_net: B5
+        num:
+          row_net: B3
+        mid:
+          row_net: B2
+
+  rotate: -6.7
+  mirror:
+    ref: matrix_thumb_home
+    distance: 30
+
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [1.2cx, 1.2cy]
+  board:
+    - what: polygon
+      operation: stack
+      fillet: 2
+      points:
+        - ref: matrix_middle_num
+          shift: [-2.5px + 2, 1.5py]
+        - ref: matrix_middle_num
+          shift: [0.5px,1.5py]
+        - ref: matrix_inner_num
+          shift: [0.5px + 7.53, 1.9py]
+        - ref: matrix_inner_num
+          shift: [0.5px + 7.53, 1.1py]
+        - ref: mirror_matrix_inner_num
+          shift: [0.5px + 7.53, 1.1py]
+        - ref: mirror_matrix_inner_num
+          shift: [0.5px + 7.53, 1.9py]
+        - ref: mirror_matrix_middle_num
+          shift: [0.5px, 1.5py]
+        - ref: mirror_matrix_middle_num
+          shift: [-0.5px, 1.5py]
+        - ref: mirror_matrix_middle_num
+          shift: [-2.5px + 2, 1.5py]
+        - ref: mirror_matrix_thumb_bottom
+          shift: [-5.5px + 5,-0.5py]
+        - ref: mirror_matrix_thumb_bottom
+          shift: [-0.5px,-0.5py]
+        - ref: mirror_matrix_thumb_bottom
+          shift: [0.5px, -0.5py]
+        - ref: matrix_thumb_bottom
+          shift: [0.5px, -0.5py]
+        - ref: matrix_thumb_bottom
+          shift: [-0.5px, -0.5py]
+        - ref: matrix_thumb_bottom
+          shift: [-5.5px + 5,-0.5py]
+  pcb_cutout:
+    - what: outline
+      name: board
+
+pcbs:
+  niu:
+    outlines:
+      main:
+        outline: pcb_cutout
+    footprints:
+      keys:
+        what: mx
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{column_net}}"
+          keycaps: true
+      mcu:
+        what: promicro
+        where:
+          shift: [110.3886, 26]
+          rotate: 270
+        params:
+          orientation: up
+      diode:
+        what: diode
+        where: true
+        adjust:
+          rotate: 0
+          shift: [0, -4.5]
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
