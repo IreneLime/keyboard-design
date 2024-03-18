@@ -51,11 +51,11 @@ points:
         home:
           row_net: B4
         top:
-          row_net: B5
+          row_net: B2
         num:
           row_net: B3
         mid:
-          row_net: B2
+          row_net: D2
 
   rotate: -6.7
   mirror:
@@ -79,9 +79,9 @@ outlines:
         - ref: matrix_inner_num
           shift: [0.5px + 7.53, 2.0py]
         - ref: matrix_inner_num
-          shift: [0.5px + 7.53, 1.2py]
+          shift: [0.5px + 7.53, 2.0py]
         - ref: mirror_matrix_inner_num
-          shift: [0.5px + 7.53, 1.2py]
+          shift: [0.5px + 7.53, 2.0py]
         - ref: mirror_matrix_inner_num
           shift: [0.5px + 7.53, 2.0py]
         - ref: mirror_matrix_middle_num
@@ -135,3 +135,13 @@ pcbs:
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
+      oled:
+        what: oled
+        params:
+          side: "F"
+          SDA: P2
+          SCL: P3
+        where:
+          ref.aggregate.parts: [matrix_inner_num,mirror_matrix_inner_num]
+          shift: [0, 0]
+        
