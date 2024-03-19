@@ -12,14 +12,14 @@ points:
         pinky:
           key:
             skip: false
-            column_net: D1
+            column_net: D2
             mirror.column_net: F4
           rows:
             bottom.skip: true
         ring:
           key:
             stagger: 14
-            column_net: D0
+            column_net: D3
             mirror.column_net: F5
         middle:
           key:
@@ -41,7 +41,7 @@ points:
             skip: true
             stagger: -7
             column_net: B5
-            mirror.column_net: B6
+            mirror.column_net: B5
           rows:
             home.skip: false
             bottom.skip: false
@@ -55,7 +55,7 @@ points:
         num:
           row_net: B3
         mid:
-          row_net: D2
+          row_net: B6
 
   rotate: -6.7
   mirror:
@@ -139,9 +139,8 @@ pcbs:
         what: oled
         params:
           side: "F"
-          SDA: P2
-          SCL: P3
+          SDA: D1
+          SCL: D0
         where:
           ref.aggregate.parts: [matrix_inner_num,mirror_matrix_inner_num]
           shift: [0, 0]
-        
