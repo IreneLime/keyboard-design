@@ -16,36 +16,55 @@ points:
             mirror.column_net: F4
           rows:
             bottom.skip: true
+            bottom_thumb.skip: true
         ring:
           key:
             stagger: 14
             column_net: D3
             mirror.column_net: F5
+          rows:
+            bottom.column_net: D2
+            bottom.mirror.column_net: F4
+            bottom_thumb.skip: true
         middle:
           key:
             stagger: 5
             column_net: D4
             mirror.column_net: F6
+          rows:
+            bottom.column_net: D3
+            bottom.mirror.column_net: F5
+            bottom_thumb.skip: true
         index:
           key:
             stagger: -5
             column_net: C6
             mirror.column_net: F7
+          rows:
+            bottom.column_net: D4
+            bottom.mirror.column_net: F6
+            bottom_thumb.skip: true
         inner:
           key:
             stagger: -6
             column_net: D7
             mirror.column_net: B1
+          rows:
+            bottom.column_net: C6
+            bottom.mirror.column_net: F7
+            bottom_thumb.skip: true
         thumb:
           key:
             skip: true
-            stagger: -7
-            column_net: B5
-            mirror.column_net: B5
+            stagger: 10
+            column_net: D7
+            mirror.column_net: B1
           rows:
-            home.skip: false
             bottom.skip: false
+            bottom_thumb.skip: false
       rows:
+        bottom_thumb:
+          row_net: B5
         bottom:
           row_net: E6
         home:
