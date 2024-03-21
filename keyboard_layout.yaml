@@ -141,7 +141,7 @@ pcbs:
       mcu:
         what: promicro
         where:
-          shift: [130, 100]
+          shift: [116, 88]
           rotate: 270
         params:
           orientation: up
@@ -164,7 +164,27 @@ pcbs:
           rotate: 270
         where:
           ref.aggregate.parts: [matrix_inner_top,mirror_matrix_inner_top]
-          shift: [0, 0]
+          shift: [1.6+0.58+3.81, -10+1.6+0.5]
+      holeOled1:
+        what: m3
+        where:
+          ref.aggregate.parts: [matrix_inner_top,mirror_matrix_inner_top]
+          shift: [-10.25, -10]
+      holeOled2:
+        what: m3
+        where:
+          ref.aggregate.parts: [matrix_inner_top,mirror_matrix_inner_top]
+          shift: [-10.25+20.5, -10]
+      holeOled3:
+        what: m3
+        where:
+          ref.aggregate.parts: [matrix_inner_top,mirror_matrix_inner_top]
+          shift: [-10.25, -10-23]
+      holeOled4:
+        what: m3
+        where:
+          ref.aggregate.parts: [matrix_inner_top,mirror_matrix_inner_top]
+          shift: [-10.25+20.5, -10-23]
       hole1:
         what: m3
         where:
