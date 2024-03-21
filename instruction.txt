@@ -1,0 +1,7 @@
+git add submodule ...
+git submodule init
+git submodule update
+
+In ergogen submodule:
+npm install
+make view

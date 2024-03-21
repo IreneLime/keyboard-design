@@ -8,4 +8,4 @@ build: $(input)
 
 .PHONY: view
 view: build
-	pcbnew out/pcbs/niu.kicad_pcb
+	pcbnew out/pcbs/keyboard-design.kicad_pcb

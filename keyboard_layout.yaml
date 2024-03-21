@@ -69,11 +69,11 @@ points:
           row_net: E6
         home:
           row_net: B4
-        top:
-          row_net: B2
-        num:
-          row_net: B3
         mid:
+          row_net: B2
+        top:
+          row_net: B3
+        num:
           row_net: B6
 
   rotate: -6.7
@@ -91,23 +91,23 @@ outlines:
       operation: stack
       fillet: 2
       points:
-        - ref: matrix_middle_num
+        - ref: matrix_middle_top
           shift: [-2.5px + 2, 1.6py]
-        - ref: matrix_middle_num
+        - ref: matrix_middle_top
           shift: [0.5px,1.6py]
-        - ref: matrix_inner_num
+        - ref: matrix_inner_top
           shift: [0.5px + 7.53, 2.0py]
-        - ref: matrix_inner_num
+        - ref: matrix_inner_top
           shift: [0.5px + 7.53, 2.0py]
-        - ref: mirror_matrix_inner_num
+        - ref: mirror_matrix_inner_top
           shift: [0.5px + 7.53, 2.0py]
-        - ref: mirror_matrix_inner_num
+        - ref: mirror_matrix_inner_top
           shift: [0.5px + 7.53, 2.0py]
-        - ref: mirror_matrix_middle_num
+        - ref: mirror_matrix_middle_top
           shift: [0.5px, 1.6py]
-        - ref: mirror_matrix_middle_num
+        - ref: mirror_matrix_middle_top
           shift: [-0.5px, 1.6py]
-        - ref: mirror_matrix_middle_num
+        - ref: mirror_matrix_middle_top
           shift: [-2.5px + 2, 1.6py]
         - ref: mirror_matrix_thumb_bottom_thumb
           shift: [-5.5px + 5,-0.5py]
@@ -126,7 +126,7 @@ outlines:
       name: board
 
 pcbs:
-  niu:
+  keyboard-design:
     outlines:
       main:
         outline: pcb_cutout
@@ -141,7 +141,7 @@ pcbs:
       mcu:
         what: promicro
         where:
-          shift: [110.3886, 26]
+          shift: [130, 100]
           rotate: 270
         params:
           orientation: up
@@ -160,6 +160,53 @@ pcbs:
           side: "F"
           SDA: D1
           SCL: D0
+        adjust:
+          rotate: 270
         where:
-          ref.aggregate.parts: [matrix_inner_num,mirror_matrix_inner_num]
+          ref.aggregate.parts: [matrix_inner_top,mirror_matrix_inner_top]
           shift: [0, 0]
+      hole1:
+        what: m3
+        where:
+          ref: [matrix_pinky_num]
+          shift: [-4.5, 23]
+      hole2:
+        what: m3
+        where:
+          ref: [matrix_inner_num]
+          shift: [-4.7, 14]
+      hole3:
+        what: m3
+        where:
+          ref: [mirror_matrix_inner_num]
+          shift: [-4.7, 14]
+      hole4:
+        what: m3
+        where:
+          ref: [mirror_matrix_pinky_num]
+          shift: [-4.5, 23]
+      hole5:
+        what: m3
+        where:
+          ref: [mirror_matrix_pinky_home]
+          shift: [-4.5, -23]
+      hole6:
+        what: m3
+        where:
+          ref: [mirror_matrix_index_bottom]
+          shift: [0, -17.45]
+      hole7:
+        what: m3
+        where:
+          ref: [mirror_matrix_thumb_bottom_thumb]
+          shift: [20, -2]
+      hole8:
+        what: m3
+        where:
+          ref: [matrix_index_bottom]
+          shift: [0, -17.45]
+      hole9:
+        what: m3
+        where:
+          ref: [matrix_pinky_home]
+          shift: [-4.5, -23]
